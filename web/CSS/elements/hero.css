@@ -1,0 +1,105 @@
+/* =============================
+   HERO SECTION
+============================= */
+#hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Hero content stays above canvas */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    transform-origin: top center;
+    margin-top: 20px;
+}
+
+/* Main heading */
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #2C3E50;
+}
+
+/* Paragraphs */
+.hero-content p {
+    font-size: 1.2rem;
+    color: #34495E;
+    margin-bottom: 30px;
+}
+
+/* Hero button */
+.hero-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #A3C4F3, #BEE3DB);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 3;
+}
+
+.hero-btn:hover {
+    background: linear-gradient(135deg, #7AA7E0, #93C6B8);
+    color: #fff;
+}
+
+/* Fade-in animation for paragraphs and button */
+.hero-paragraph,
+.hero-btn {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero-paragraph.show,
+.hero-btn.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.siberik-logo {
+    max-width: 150px !important;
+    height: auto !important;
+    margin-bottom: 20px !important;
+    opacity: 0.95;
+}
+
+#omit-intro {
+    display: inline-block;           
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#omit-intro:hover {
+    transform: scale(1.2);         
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+@media (max-width: 1300px) {
+    .hero-content {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content {
+        transform: scale(0.7);
+    }
+}

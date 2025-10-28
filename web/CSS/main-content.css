@@ -1,0 +1,90 @@
+/* =============================
+   MAIN CONTENT
+============================= */
+
+#main-content {
+    display: none;
+    margin-top: 20px;
+    position: relative;  /* occupies normal flow */
+    opacity: 0;
+    transition: opacity 1s ease;
+    padding: 40px 100px 40px 100px;
+    align-items: center;
+}
+
+#main-content h1 {
+    color: rgb(109, 109, 255);
+    align-self: center;
+}
+
+#main-content section {
+    background-color: rgba(255, 255, 255, 0.4); 
+    border-radius: 20px;
+    max-width: 800px;                            
+    margin: 80px auto;                           
+    padding: 30px 40px;                         
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);                        
+}
+
+#project-info {
+    display: flex;         
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center; 
+    text-align: center;     
+    padding: 20px;
+    gap: 30px;
+}
+
+.connect-logo {
+    max-height: 120px;
+    width: auto;
+}
+
+/* Responsive */
+
+@media (max-width: 1300px) {
+    #main-content {
+        margin-top: 0;
+        padding: 10px 30px 40px 30px;
+    }    
+    
+    section {
+        max-width: 900px;
+    }
+
+    .connect-logo {
+        max-height: 100px;
+        width: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    #main-content {
+        padding: 10px 25px 0 25px;
+    }
+    section {
+        margin: 60px auto;
+        max-width: 800px;
+    }
+    .connect-logo {
+        max-height: 80px;
+        width: auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .connect-logo {
+        max-height: 60px;
+        width: auto;
+    }
+       
+    #main-content {
+        padding: 10px 20px 0 20px;
+        font-size: 12px;
+    }
+    section {
+        padding: 20px;
+    }
+}

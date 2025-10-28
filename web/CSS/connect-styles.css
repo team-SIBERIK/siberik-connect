@@ -1,0 +1,92 @@
+/* =========================================
+   SIBERIK CONNECT – MINIMALIST ENHANCEMENTS
+========================================= */
+
+/* ---- General Section Improvements ---- */
+#main-content section h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #444cf7; 
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#main-content section p {
+    font-size: 1rem;
+    color: #2c2c2c;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* ---- Lists: Minimalist Style ---- */
+#main-content ul {
+    list-style: none; 
+    padding-left: 0;
+    margin: 10px 0 25px 0;
+}
+
+#main-content li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 10px;
+    font-size: 0.97rem;
+    line-height: 1.5;
+    color: #222;
+}
+
+/* custom bullet: simple circle in blue tone */
+#main-content li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: #4f57ff;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+/* ---- Links ---- */
+#main-content a {
+    color: #4f57ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#main-content a:hover {
+    color: #2d32b5;
+    text-shadow: 0 0 5px rgba(79, 87, 255, 0.2);
+}
+
+/* ---- Emphasis (quotes, highlights) ---- */
+#main-content em {
+    color: #444cf7;
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* ---- Section Spacing & Feel ---- */
+#main-content section {
+    backdrop-filter: blur(8px); 
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#main-content section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Responsive Tweaks ---- */
+@media (max-width: 800px) {
+    #main-content section h2 {
+        font-size: 1.4rem;
+    }
+
+    #main-content section p, 
+    #main-content li {
+        font-size: 0.95rem;
+    }
+}
