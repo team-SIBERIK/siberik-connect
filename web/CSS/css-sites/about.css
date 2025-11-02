@@ -1,0 +1,93 @@
+/* --- GENERAL STYLE --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #ffffff 0%, #e6f2ff 40%, #d6ebff 100%);
+    color: #083b66;
+    overflow-x: hidden;
+    line-height: 1.8;
+    padding: 4rem 2rem;
+}
+
+/* --- BACK LINK --- */
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    color: #0a73c9;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #055a9c;
+}
+
+/* --- STORY PARAGRAPHS --- */
+#story {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 1.15rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInPage 1.5s ease-out forwards;
+}
+
+#story p {
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+#story p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- TEXT STYLING --- */
+#story strong {
+    color: #045fa5;
+    font-weight: 600;
+}
+
+#story em {
+    color: #0967b2;
+    font-style: italic;
+}
+
+.highlight {
+    background: linear-gradient(90deg, #b8e1ff, #e8f7ff);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+}
+
+/* --- LAST QUOTE --- */
+.closing {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #0b4d85;
+    margin-top: 5rem;
+    letter-spacing: 0.5px;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
