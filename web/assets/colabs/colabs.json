@@ -1,0 +1,39 @@
+{
+    "persons": [
+        {
+            "person_id": "001",
+            "person_name": "Mike",
+            "url": {
+                "linkedin": "https://www.linkedin.com/in/mikemaranon",
+                "github": "https://github.com/Mikemaranon"
+            },
+            "photo": "../../web/assets/colabs/people/001-Mike/prof_pic.png",
+            "roles": ["Ingeniero de Datos", "Experto en IA"],
+            "description": "Ingeniero de datos con experiencia en IA, cloud y sistemas. Combina tecnología y música para crear proyectos innovadores."
+        },
+        {
+            "person_id": "002",
+            "person_name": "Rodrigo",
+            "url": {
+                "linkedin": "https://www.linkedin.com/in/rodrigo",
+                "github": "https://github.com/rodrigo"
+            },
+            "photo": "../../web/assets/colabs/people/002-Dro/prof_pic.png",
+            "roles": ["Escenógrafo", "Músico Clásico"],
+            "description": "Especialista audiovisual y pianista profesional, centrado en la creación de experiencias visuales y sonoras de alta calidad."
+        },
+        {
+            "person_id": "003",
+            "person_name": "Roberto",
+            "url": {
+                "linkedin": "https://www.linkedin.com/in/roberto-garcía-865921330",
+                "github": "https://github.com/RoberSinHache"
+            },
+            "photo": "../../web/assets/colabs/people/003-Rober/prof_pic.jpeg",
+            "roles": ["Ingeniero de Datos", "Experto en IA"],
+            "description": "Especialista en Inteligencia Artificial y Desarrollo. Apasionado por la innovación y la robótica"
+        }
+    ],
+    "entities": [],
+    "businesses": []
+}

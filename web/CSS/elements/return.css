@@ -1,0 +1,19 @@
+.go-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.go-back a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    color: #0a73c9;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    transition: color 0.3s ease;
+}
+
+.go-back a:hover {
+    color: #055a9c;
+}

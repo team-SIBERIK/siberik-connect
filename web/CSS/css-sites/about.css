@@ -16,21 +16,6 @@ body {
     padding: 4rem 2rem;
 }
 
-/* --- BACK LINK --- */
-.back-link {
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 600;
-    color: #0a73c9;
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
-    transition: color 0.3s ease;
-}
-
-.back-link:hover {
-    color: #055a9c;
-}
-
 /* --- STORY PARAGRAPHS --- */
 #story {
     max-width: 800px;

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaboradores</title>
+
+    <link rel="stylesheet" href="../CSS/css-sites/partners.css">
+    <link rel="stylesheet" href="../CSS/elements/return.css">
+    <link rel="stylesheet" href="../CSS/elements/modal.css">
+</head>
+
+<body>
+    <div class="go-back">
+        <a class="back-link" href="../../index.html">Volver</a>
+    </div>
+    <h1>Conoce a nuestros colaboradores</h1>
+
+    <!-- Dark Background -->
+	<div id="fadeBackground" class="fade-background"></div>
+
+    <!-- PERSONAS -->
+    <section class="section">
+        <h2>Personas</h2>
+        <div class="grid" id="personas-grid">
+            <!--<div class="card"><img src="https://via.placeholder.com/200x200?text=Persona+1" alt="Persona 1"></div>-->
+        </div>
+        <div class="toggle-btn">
+            <img 
+                src="../assets/icons/arrow.png" 
+                alt="Ver más" 
+                class="toggle-arrow" 
+                onclick="toggleSection('personas-grid', this)"
+            >
+        </div>
+    </section>
+
+    <!-- ENTIDADES -->
+    <section class="section">
+        <h2>Entidades</h2>
+        <div class="grid" id="entidades-grid">
+            <!--<div class="card"><img src="https://via.placeholder.com/200x200?text=Entidad+1" alt="Entidad 1"></div>-->
+        </div>
+        <div class="toggle-btn">
+            <img 
+                src="../assets/icons/arrow.png" 
+                alt="Ver más" 
+                class="toggle-arrow" 
+                onclick="toggleSection('entidades-grid', this)"
+            >
+        </div>
+    </section>
+
+    <!-- EMPRESAS -->
+    <section class="section">
+        <h2>Empresas</h2>
+        <div class="grid" id="empresas-grid">
+            <!--<div class="card"><img src="https://via.placeholder.com/200x200?text=Empresa+1" alt="Empresa 1"></div>-->
+        </div>
+        <div class="toggle-btn">
+            <img 
+                src="../assets/icons/arrow.png" 
+                alt="Ver más" 
+                class="toggle-arrow" 
+                onclick="toggleSection('empresas-grid', this)"
+            >
+        </div>
+    </section>
+
+<script src="../JS/js-sites/partners.js"></script>
+<script src="../JS/elements/modal.js"></script>
+</body>
+</html>

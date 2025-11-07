@@ -177,7 +177,46 @@
 }
 
 /* =============================
-   ANIMATIONS
+    ROLES
+============================= */
+
+.roles-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.roles-container h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.roles-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.role-item {
+    background-color: #ffb03a;
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    border-radius: 9999px; /* completamente circular */
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.role-item:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* =============================
+    ANIMATIONS
 ============================= */
 @keyframes fadeInBackground {
     from { opacity: 0; background-color: rgba(0,0,0,0); }
