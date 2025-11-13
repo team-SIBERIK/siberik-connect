@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    background: linear-gradient(180deg, #ffffff 0%, #e6f2ff 40%, #d6ebff 100%);
+    background: linear-gradient(180deg, var(--absolute-color) 0%, var(--bluey-color) 40%, var(--bluey-color-2) 100%);
     color: #083b66;
     overflow-x: hidden;
     line-height: 1.8;
@@ -18,7 +18,7 @@ h1 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #045fa5;
+    color: var(--accent-color);
     animation: fadeInPage 1.5s ease-out forwards;
 }
 
@@ -29,7 +29,7 @@ h1 {
 }
 
 .section h2 {
-    color: #0967b2;
+    color: var(--accent-color);
     font-size: 1.6rem;
     margin-bottom: 1.5rem;
     border-bottom: 2px solid #b8e1ff;
@@ -133,6 +133,22 @@ h1 {
 
 .card:hover img {
     box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    padding-top: 6px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.theme-toggle img.theme-icon {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 0 2px var(--shadow-color));
+    cursor: pointer;
 }
 
 /* --- ANIMATIONS --- */

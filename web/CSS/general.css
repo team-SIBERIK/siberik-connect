@@ -1,9 +1,5 @@
 
 :root {
-    --azul-principal: #0078d7;
-    --gris-texto: #666;
-    --gris-suave: #f3f3f3;
-    --gris-medio: #dddddd;
     --transicion: 0.6s ease;
     font-family: "Segoe UI", Roboto, sans-serif;
 }
@@ -14,8 +10,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: #1a1a1a;
-    background-color: #F3F6FA;
+    color: var(--text-primary-color);
+    background-color: var(--main-bg-color);
     line-height: 1.6;
     margin: 0;
 }
@@ -44,4 +40,3 @@ body {
     height: 100%;
     z-index: -1;
 }
-

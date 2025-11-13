@@ -1,5 +1,6 @@
 .go-back {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -8,12 +9,20 @@
     display: inline-block;
     text-decoration: none;
     font-weight: 600;
-    color: #0a73c9;
+    color: var(--accent-color);
     font-size: 1.2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     transition: color 0.3s ease;
 }
 
 .go-back a:hover {
-    color: #055a9c;
+    color: var(--accent-hover-color);
+}
+
+.go-back img {
+    width: 32px;
+    height: 32px;
+    margin-right: 13px;
+    vertical-align: middle;
+    margin-bottom: 2rem;
 }
