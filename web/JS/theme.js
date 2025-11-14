@@ -5,8 +5,8 @@ class ThemeManager {
         this.themeLink = document.getElementById("theme-stylesheet");
         this.toggleBtn = document.getElementById("theme-toggle");
 
-        this.lightTheme = "/web/CSS/themes/light.css";
-        this.darkTheme = "/web/CSS/themes/dark.css";
+        this.lightTheme = "web/CSS/themes/light.css";
+        this.darkTheme = "web/CSS/themes/dark.css";
 
         this.init();
     }
@@ -29,8 +29,8 @@ class ThemeManager {
 
         // Change toggle button icon
         const iconPath = theme === "light" 
-            ? "/web/assets/icons/moon.png" 
-            : "/web/assets/icons/sun.png";
+            ? "web/assets/icons/moon.png" 
+            : "web/assets/icons/sun.png";
 
         this.toggleBtn.innerHTML = `<img src="${iconPath}" alt="theme icon" class="theme-icon">`;
 
