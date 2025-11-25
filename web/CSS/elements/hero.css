@@ -63,6 +63,40 @@
     transform: translateY(-10px);
 }
 
+/* === BUTTON STYLES WITHIN HERO === */
+
+.sc-btn {
+    padding: 0.75rem 1.35rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.18s ease-out, color 0.18s ease-out, box-shadow 0.18s ease-out, transform 0.18s ease-out, border-color 0.18s ease-out;
+}
+
+.sc-btn-primary {
+    background: #111827;
+    color: #f9fafb;
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.28);
+}
+
+.sc-btn-primary:hover {
+    background: #1f2937;
+    transform: translateY(-1px);
+    box-shadow: 0 18px 32px rgba(15, 23, 42, 0.32);
+}
+
+.sc-btn-ghost {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #111827;
+}
+
+.sc-btn-ghost:hover {
+    border-color: #9ca3af;
+}
+
 @media (max-width: 1040px) {
     .sc-hero-inner {
         margin-left: 20px;

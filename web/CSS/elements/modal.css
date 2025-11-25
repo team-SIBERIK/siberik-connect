@@ -5,6 +5,7 @@
 }
 
 /* MODAL RESPONSIVE CENTRADO Y SCROLLEABLE */
+
 .sc-modal-backdrop {
     position: fixed;
     inset: 0;
@@ -151,6 +152,35 @@
     justify-content: center;
     font-size: 1.1rem;
     color: #4b5563;
+}
+
+/* === FIELDS === */
+
+.sc-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.sc-field label {
+    font-size: 0.82rem;
+    color: #4b5563;
+}
+
+.sc-field input,
+.sc-field textarea {
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.9rem;
+    outline: none;
+    background: #f9fafb;
+}
+
+.sc-field input:focus,
+.sc-field textarea:focus {
+    border-color: #4f8df6;
+    background: #ffffff;
 }
 
 

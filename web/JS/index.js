@@ -58,7 +58,6 @@ class SmoothScrollController {
 }
 
 
-// Nuevo HERO overlay logic
 class HeroOverlayController {
     constructor() {
         this.hero = document.getElementById("hero-overlay");

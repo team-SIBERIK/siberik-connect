@@ -84,6 +84,7 @@ button {
     transform: translateY(0);
 }
 
+
 @media (max-width: 768px) {
     body.sc-body {
         background: #eef2ff;

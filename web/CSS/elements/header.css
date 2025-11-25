@@ -16,6 +16,42 @@
     gap: 1rem;
 }
 
+/* === LOGO === */
+
+.sc-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.sc-brand-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    object-fit: contain;
+    background: #e5ebfb;
+    box-shadow: 0 6px 18px rgba(148, 163, 184, 0.4);
+}
+
+.sc-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.sc-brand-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #111827;
+}
+
+.sc-brand-tagline {
+    font-size: 0.78rem;
+    color: #6b7280;
+}
+
 
 @media (max-width: 768px) {
     .sc-header-inner {
