@@ -1,50 +1,53 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll(".founder-btn");
-    const fade = document.getElementById("fadeBackground");
+class SCModalController {
+    constructor() {
+        this.backdrops = Array.from(document.querySelectorAll(".sc-modal-backdrop"));
+        this.registerEvents();
+    }
 
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const target = btn.getAttribute("data-target");
-            openModal(target);
+    registerEvents() {
+        document.addEventListener("click", evt => {
+            const openTrigger = evt.target.closest("[data-open-modal]");
+            if (openTrigger) {
+                const selector = openTrigger.getAttribute("data-open-modal");
+                const backdrop = document.querySelector(selector);
+                if (backdrop) {
+                    evt.preventDefault();
+                    this.open(backdrop);
+                }
+            }
+
+            const closeTrigger = evt.target.closest("[data-close-modal]");
+            if (closeTrigger) {
+                const backdrop = closeTrigger.closest(".sc-modal-backdrop");
+                if (backdrop) {
+                    evt.preventDefault();
+                    this.close(backdrop);
+                }
+            }
+
+            if (evt.target.classList.contains("sc-modal-backdrop")) {
+                this.close(evt.target);
+            }
         });
-    });
 
-    fade.addEventListener("click", () => {
-        closeAllModals();
-    });
+        document.addEventListener("keydown", evt => {
+            if (evt.key === "Escape") {
+                this.backdrops.forEach(b => this.close(b));
+            }
+        });
+    }
+
+    open(backdrop) {
+        backdrop.classList.add("sc-modal-backdrop--open");
+        backdrop.setAttribute("aria-hidden", "false");
+    }
+
+    close(backdrop) {
+        backdrop.classList.remove("sc-modal-backdrop--open");
+        backdrop.setAttribute("aria-hidden", "true");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    new SCModalController();
 });
-
-function openModal(id) {
-    const modal = document.getElementById(id);
-    const fade = document.getElementById("fadeBackground");
-    modal.classList.add("show");
-    fade.classList.add("show");
-    document.body.style.overflow = "hidden"; // 🚫 bloquea scroll de la página
-}
-
-function closeModal(id) {
-    const modal = document.getElementById(id);
-    const fade = document.getElementById("fadeBackground");
-    modal.classList.add("closing");
-    fade.classList.add("closing");
-
-    setTimeout(() => {
-        modal.classList.remove("show", "closing");
-        fade.classList.remove("show", "closing");
-        document.body.style.overflow = ""; // ✅ reactiva scroll al cerrar
-    }, 400);
-}
-
-function closeAllModals() {
-    document.querySelectorAll(".modal").forEach(modal => {
-        modal.classList.add("closing");
-    });
-    const fade = document.getElementById("fadeBackground");
-    fade.classList.add("closing");
-
-    setTimeout(() => {
-        document.querySelectorAll(".modal").forEach(modal => modal.classList.remove("show", "closing"));
-        fade.classList.remove("show", "closing");
-        document.body.style.overflow = ""; // ✅ vuelve a permitir scroll
-    }, 400);
-}

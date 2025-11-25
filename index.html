@@ -1,170 +1,367 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <link rel="icon" type="image/png" href="web/assets/SIBERIK.png">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Siberik Connect</title>
+<head>
+    <link rel="icon" type="image/png" href="web/assets/SIBERIK.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siberik Connect</title>
 
-        <link rel="stylesheet" href="web/CSS/general.css">
-        <link rel="stylesheet" href="web/CSS/connect-styles.css">
-        <link rel="stylesheet" href="web/CSS/main-content.css">
+    <link rel="stylesheet" href="web/CSS/general.css">
+    <link rel="stylesheet" href="web/CSS/connect-styles.css">
+    <link rel="stylesheet" href="web/CSS/main-content.css">
 
-        <link rel="stylesheet" href="web/CSS/elements/hero.css">
-        <link rel="stylesheet" href="web/CSS/elements/header.css"/>
-        <link rel="stylesheet" href="web/CSS/elements/footer.css"/>
-        <link rel="stylesheet" href="web/CSS/elements/modal.css"/>
+    <link rel="stylesheet" href="web/CSS/elements/hero.css">
+    <link rel="stylesheet" href="web/CSS/elements/header.css"/>
+    <link rel="stylesheet" href="web/CSS/elements/footer.css"/>
+    <link rel="stylesheet" href="web/CSS/elements/modal.css"/>
 
-        <link rel="stylesheet" href="web/CSS/themes/dark.css" id="theme-stylesheet">
-    </head>
-    <body>
-        <!-- canvas fized in background -->
-        <canvas id="hero-background"></canvas>
+    <link rel="stylesheet" href="web/CSS/themes/dark.css" id="theme-stylesheet">
+</head>
+<body class="sc-body">
+    <div class="sc-page">
+        <header class="sc-header">
+            <div class="sc-header-inner">
+                <div class="sc-brand">
+                    
+                        <img src="web/assets/SIBERIK/SIBERIK.png" alt="Siberik Connect" class="sc-brand-logo">
+                    <a href="https://team-siberik.github.io/siberik-web">
+                    <div class="sc-brand-text">
+                        <span class="sc-brand-name">Siberik Connect</span>
+                        <span class="sc-brand-tagline">Una invitación a cuidar de quienes sienten que ya no pueden más.</span>
+                    </div>
+                    </a>
+                </div>
 
-        <!-- Hero Section -->
-        <div id="hero-section">
-            <div class="hero-content">
-                <a id="omit-intro"><img src="web/assets/SIBERIK/SIBERIK.png" class="siberik-logo"></a>
+                <button class="sc-nav-toggle" id="sc-nav-toggle" aria-label="Abrir navegación">
+                    <span></span><span></span><span></span>
+                </button>
 
-                <p class="hero-paragraph">
-                    En España, el suicidio es hoy <strong>la principal causa de muerte entre los jóvenes</strong>.
+                <nav class="sc-nav" id="sc-nav">
+                    <ul class="sc-nav-list">
+                        <li><a href="#historia" data-nav-link>Historia</a></li>
+                        <li><a href="#propuesta" data-nav-link>Propuesta</a></li>
+                        <li><a href="#camino" data-nav-link>Camino</a></li>
+                        <li><a href="#colaborar" data-nav-link>Colaborar</a></li>
+                        <li><a href="#contacto" data-nav-link>Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="hero-overlay" class="sc-hero-overlay">
+
+                <div class="sc-hero-inner">
+                    <div class="sc-hero-text">
+                        <p class="sc-hero-kicker">Carta abierta · Proyecto en construcción · Iniciativa sin ánimo de lucro</p>
+                        <h1 class="sc-hero-title">
+                            Hay personas que hoy sienten que ya no pueden más.<br>
+                            No queremos que lo vivan en silencio.
+                        </h1>
+                        <p class="sc-hero-subtitle">
+                            Siberik Connect nace como una propuesta para acompañar a quienes están al límite,
+                            a sus entornos y a los profesionales que ya están sosteniendo esta realidad.
+                            No es un servicio de urgencias, ni un sustituto de la atención sanitaria.
+                            Es un intento de construir, juntos, un puente hacia la ayuda adecuada.
+                        </p>
+
+                        <div class="sc-hero-actions">
+                            <button class="sc-btn sc-btn-primary" data-open-modal="#sc-contact-modal">
+                                Contáctanos
+                            </button>
+                            <button class="sc-btn sc-btn-ghost" data-hero-discover data-scroll-to="#historia">
+                                Descubre Connect
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        </div> <!-- end hero-overlay -->
+        <main class="sc-main" style="display:none;">
+
+
+            <section id="historia" class="sc-section sc-block sc-block--first">
+                <div class="sc-block-inner">
+                    <div class="sc-block-label">01 · Lo que está pasando</div>
+                    <h2 class="sc-block-title">Un problema que todos conocemos de cerca, aunque a veces no tengamos las palabras.</h2>
+                    <p class="sc-block-text sc-block-lead">
+                        Todos conocemos a alguien que ha pasado por una crisis profunda, por ideas de abandono,
+                        por pensamientos de no querer seguir. A veces sobrevivió para contarlo. A veces no.
+                    </p>
+                    <p class="sc-block-text">
+                        Muchas personas que conviven con ideación suicida sienten vergüenza, culpa o miedo a ser
+                        una carga. Prefieren callar. A su alrededor, quienes acompañan perciben que algo no va bien,
+                        pero no siempre saben cómo preguntar, qué decir o a dónde acudir si la situación va a peor.
+                    </p>
+                    <p class="sc-block-text">
+                        Mientras tanto, asociaciones, profesionales y recursos especializados trabajan cada día
+                        para prevenir el suicidio. Pero demasiadas veces las personas no llegan a tiempo, o ni siquiera
+                        saben que esos recursos existen.
+                    </p>
+                    <p class="sc-block-text sc-block-emphasis">
+                        No queremos normalizar esta realidad. No queremos mirar hacia otro lado mientras tantas personas
+                        sienten que ya no tienen salida.
+                    </p>
+                </div>
+            </section>
+
+            <section id="propuesta" class="sc-section sc-block">
+                <div class="sc-block-inner">
+                    <div class="sc-block-label">02 · Qué proponemos</div>
+                    <h2 class="sc-block-title">Un puente entre el “no puedo más” y la ayuda adecuada.</h2>
+                    <p class="sc-block-text sc-block-lead">
+                        Siberik Connect es una propuesta para acompañar a personas en crisis, a quienes las rodean
+                        y a los equipos que ya trabajan en primera línea. Queremos combinar escucha, orientación
+                        y conexión con recursos reales.
+                    </p>
+                    <p class="sc-block-text">
+                        No buscamos hacer promesas imposibles ni reemplazar procesos terapéuticos. Queremos construir,
+                        junto a personas afectadas y profesionales, un espacio que haga tres cosas con honestidad:
+                    </p>
+
+                    <div class="sc-lines">
+                        <div class="sc-line-item">
+                            <span class="sc-line-marker"></span>
+                            <p><strong>Escuchar sin juzgar.</strong> Ofrecer un primer espacio para hablar con calma,
+                            sin miedo a “estar exagerando” o “ser una carga”.</p>
+                        </div>
+                        <div class="sc-line-item">
+                            <span class="sc-line-marker"></span>
+                            <p><strong>Orientar con cuidado.</strong> Ayudar a poner palabras, identificar señales de riesgo
+                            y explorar opciones que no pasen por hacerlo todo en soledad.</p>
+                        </div>
+                        <div class="sc-line-item">
+                            <span class="sc-line-marker"></span>
+                            <p><strong>Conectar con recursos reales.</strong> Acercar teléfonos, asociaciones, centros
+                            y profesionales que puedan ofrecer la ayuda que la persona necesita.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <p class="sc-block-text">
+                        Todo ello con un límite muy claro: <strong>Siberik Connect no sustituye la atención sanitaria,
+                        psicológica ni social profesional.</strong> Su función es acompañar y tender puentes, no decidir
+                        por nadie ni hacer diagnósticos.
+                    </p>
+                </div>
+            </section>
+
+            <section id="camino" class="sc-section sc-block">
+                <div class="sc-block-inner">
+                    <div class="sc-block-label">03 · El camino del proyecto</div>
+                    <h2 class="sc-block-title">De una idea a una herramienta que cuida.</h2>
+                    <p class="sc-block-text sc-block-lead">
+                        Queremos que Siberik Connect avance de forma gradual, transparente y acompañada.
+                        Más que lanzar un producto cerrado, buscamos recorrer un camino compartido, con revisiones
+                        éticas y supervisión externa.
+                    </p>
+
+                    <div class="sc-timeline">
+                        <div class="sc-timeline-step">
+                            <div class="sc-timeline-dot"></div>
+                            <div class="sc-timeline-content">
+                                <h3>Escuchar y mapear la realidad</h3>
+                                <p>
+                                    Conversar con personas que han vivido crisis suicidas, con sus entornos,
+                                    con asociaciones y profesionales. Entender qué necesitan, qué les ha faltado
+                                    y qué no deberíamos repetir.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="sc-timeline-step">
+                            <div class="sc-timeline-dot"></div>
+                            <div class="sc-timeline-content">
+                                <h3>Definir un primer prototipo sencillo (MVP)</h3>
+                                <p>
+                                    Diseñar un flujo de acompañamiento prudente, que ponga límites claros a lo que
+                                    la herramienta puede hacer y priorice la derivación a recursos ya existentes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="sc-timeline-step">
+                            <div class="sc-timeline-dot"></div>
+                            <div class="sc-timeline-content">
+                                <h3>Probar y revisar junto a quienes ya están</h3>
+                                <p>
+                                    Testear el prototipo con grupos pequeños, recoger feedback, revisar sesgos y
+                                    ajustar el diseño con apoyo de profesionales y entidades especializadas.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="sc-timeline-step">
+                            <div class="sc-timeline-dot"></div>
+                            <div class="sc-timeline-content">
+                                <h3>Ampliar la red de recursos y apoyo</h3>
+                                <p>
+                                    Integrar mejor los teléfonos de ayuda, asociaciones y redes de acompañamiento,
+                                    y explorar cómo sumar voluntariado formado sin sobrecargarlo.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="sc-timeline-step">
+                            <div class="sc-timeline-dot"></div>
+                            <div class="sc-timeline-content">
+                                <h3>Cuidar del propio proyecto</h3>
+                                <p>
+                                    Establecer revisiones periódicas, espacios de supervisión y mecanismos para
+                                    ajustar o detener partes de la herramienta que puedan resultar dañinas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="colaborar" class="sc-section sc-block">
+                <div class="sc-block-inner">
+                    <div class="sc-block-label">04 · Cómo puedes sumar</div>
+                    <h2 class="sc-block-title">No buscamos espectadores. Buscamos compañeros de camino.</h2>
+                    <p class="sc-block-text sc-block-lead">
+                        Siberik Connect está en fase de diseño. Lo que más necesitamos ahora son miradas,
+                        experiencia y cuidados compartidos.
+                    </p>
+
+                    <div class="sc-lines sc-lines--columns">
+                        <div class="sc-line-item">
+                            <span class="sc-line-marker"></span>
+                            <p><strong>Si has vivido una crisis o la has acompañado de cerca,</strong> tu experiencia
+                            puede ayudarnos a entender qué es realmente útil y qué no deberíamos reproducir.</p>
+                        </div>
+                        <div class="sc-line-item">
+                            <span class="sc-line-marker"></span>
+                            <p><strong>Si trabajas en salud mental, intervención social o educación,</strong> puedes
+                            aportar tu criterio profesional, revisar enfoques y señalar límites éticos y clínicos.</p>
+                        </div>
+                        <div class="sc-line-item">
+                            <span class="sc-line-marker"></span>
+                            <p><strong>Si formas parte de una entidad o colectivo,</strong> puedes explorar con nosotros
+                            cómo integrar tu trabajo en la red de recursos o participar en fases piloto y de revisión.</p>
+                        </div>
+                    </div>
+
+                    <p class="sc-block-text">
+                        También son valiosas la difusión, el apoyo logístico o el tiempo voluntario en los momentos
+                        en los que abramos pruebas concretas. Cada gesto cuenta, siempre respetando los límites
+                        personales de cada persona.
+                    </p>
+                </div>
+            </section>
+
+            <section id="contacto" class="sc-section sc-block sc-block--final">
+                <div class="sc-block-inner">
+                    <div class="sc-block-label">05 · Cerrar esta carta</div>
+                    <h2 class="sc-block-title">Si lo que has leído resuena contigo, hablamos.</h2>
+                    <p class="sc-block-text sc-block-lead">
+                        Esta página no es un informe técnico ni una memoria de proyecto. Es una carta abierta.
+                        Una forma de decir: vemos lo que está pasando y no queremos normalizarlo.
+                    </p>
+                    <p class="sc-block-text">
+                        Si trabajas en este ámbito, si lo has vivido de cerca o si crees que puedes aportar algo
+                        a este camino, nos encantará escucharte y construir juntos los siguientes pasos.
+                    </p><br>
+                    <button class="sc-btn sc-btn-primary" data-open-modal="#sc-contact-modal">
+                        Contáctanos
+                    </button>
+                    <br><br>
+                    <div class="sc-contact-inline">
+                        <div class="sc-contact-main">
+                            <p class="sc-contact-label">Correo de contacto</p>
+                            <a href="mailto:team.siberik@gmail.com" class="sc-contact-mail">team.siberik@gmail.com</a>
+                            <p class="sc-contact-note">
+                                Este correo no es un canal de emergencia. Si tú o alguien cercano está en peligro,
+                                por favor, contacta con los servicios de urgencias o teléfonos oficiales de ayuda
+                                de tu país.
+                            </p>
+                        </div>
+                        <div class="sc-contact-extra">
+                            <p class="sc-contact-extra-text">
+                                También podemos coordinar videollamadas, reuniones con entidades o sesiones de trabajo
+                                específicas para revisar el enfoque del proyecto.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="sc-end-note">
+                        Gracias por dedicar tiempo y atención a este problema. Tal vez no podamos cambiarlo todo,
+                        pero sí podemos intentar que menos personas lo vivan en soledad.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <div class="sc-modal-backdrop" id="sc-contact-modal" aria-hidden="true">
+            <div class="sc-modal" role="dialog" aria-modal="true" aria-labelledby="sc-contact-modal-title">
+                <button class="sc-modal-close" data-close-modal aria-label="Cerrar ventana">
+                    ×
+                </button>
+                <h2 id="sc-contact-modal-title" class="sc-modal-title">Ponernos en contacto</h2>
+                <p class="sc-modal-intro">
+                    Si quieres saber más sobre Siberik Connect, proponer una colaboración o compartir tu experiencia,
+                    puedes escribirnos a través de este formulario o de las vías que ves más abajo.
                 </p>
 
-                <p class="hero-paragraph">
-                    Más de <strong>4.000 personas</strong> perdieron la vida en 2023, y los casos entre adolescentes han crecido más del <strong>30 % desde 2019</strong>.
-                </p>
-
-                <p class="hero-paragraph">
-                    Pero estas cifras no son números. Son nombres, son historias, son gritos que no fueron escuchados. El silencio invade la vida de aquellos
-                    que están en riesgo, haciéndoles sentirse aislados. <br>
-                </p>
-
-                <p class="hero-paragraph">
-                    <strong>Siberik Connect nace para romper ese silencio, para ofrecer escucha, compañía y esperanza a quien siente que no queda salida.</strong>
-                </p>
-
-                <a href="#get-involved" class="hero-btn">Únete a la causa</a>
+                <form class="sc-modal-form">
+                    <div class="sc-field">
+                        <label for="sc-name">Nombre</label>
+                        <input type="text" id="sc-name" name="name" placeholder="Cómo te gustaría que te llamemos">
+                    </div>
+                    <div class="sc-field">
+                        <label for="sc-email">Correo electrónico</label>
+                        <input type="email" id="sc-email" name="email" placeholder="tu@correo.com">
+                    </div>
+                    <div class="sc-field">
+                        <label for="sc-org">Entidad / Rol (opcional)</label>
+                        <input type="text" id="sc-org" name="org" placeholder="Psicología, asociación, familiar, voluntariado...">
+                    </div>
+                    <div class="sc-field">
+                        <label for="sc-message">Mensaje</label>
+                        <textarea id="sc-message" name="message" rows="4" placeholder="Cuéntanos en qué estás pensando o qué te gustaría explorar con nosotros."></textarea>
+                    </div>
+                    <p class="sc-modal-note">
+                        Este formulario no se conecta todavía a un sistema automático. Puedes copiar tu mensaje
+                        y enviarlo directamente a <strong>team.siberik@gmail.com</strong> si lo prefieres.
+                    </p>
+                </form>
+                
+                <div class="sc-modal-contact-grid">
+                    <div class="sc-modal-contact-card">
+                        <div class="sc-modal-icon-circle">📞</div>
+                        <div>
+                            <p class="sc-modal-contact-label">Emergencias</p>
+                            <p class="sc-modal-contact-text">
+                                En caso de peligro inminente, por favor, contacta con los servicios de urgencias
+                                o teléfonos oficiales de ayuda de tu país.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="sc-modal-contact-card">
+                        <div class="sc-modal-icon-circle">🤝</div>
+                        <div>
+                            <p class="sc-modal-contact-label">Colaboraciones</p>
+                            <p class="sc-modal-contact-text">
+                                Podemos coordinar reuniones con entidades, equipos clínicos o colectivos
+                                que quieran explorar el proyecto más a fondo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Main content -->
-        <div id="main-content">
-            <header>
-                <div class="name">
-                    <a href="https://team-siberik.github.io/siberik-web/" target="_blank">	
-                        <img src="web/assets/SIBERIK/SIBERIK.png" alt="Logo Siberik" class="header-logo"/>
-                    </a>
-                    <a href="https://team-siberik.github.io/siberik-web/" target="_blank">	
-                        <img src="web/assets/SIBERIK/NAME.png" alt="SIBERIK name"/>
-                    </a>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-                        <!-- Theme Icon will be inserted here by JS -->
-                    </button>
-                </div>
-                <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
-                    <!-- Burguer Icon -->
-                </button>
-                
-                <nav id="main-nav">
-                    <a href="#project-info" class="nav-link">Connect</a>
-                    <a href="#about-initiative" class="nav-link">Iniciativa</a>
-                    <a href="#how-it-works" class="nav-link">Funcionamiento</a>
-                    <a href="#ethics-transparency" class="nav-link">Ética</a>
-                    <a href="#how-to-help" class="nav-link">Colabora</a>
-                </nav>
-		    </header>
-            <main>
-                <a href="web/sites/partners.html"><section id="project-info">
-                    <img src="web/assets/SIBERIK/SIBERIK_CONNECT.png" class="connect-logo">
-                    <p>
-                        Siberik Connect es un proyecto diseñado para acompañar a personas en situaciones de crisis 
-                        o riesgo de abandono, ofreciendo apoyo emocional, recursos locales de ayuda y espacios seguros 
-                        de conversación. <br><br>
-                        Su objetivo principal es que nadie se sienta solo y que siempre exista una salida, conectando 
-                        de manera anónima a quienes necesitan ayuda con voluntarios capacitados y brindando asistencia 
-                        inmediata en casos de emergencia.
-                    </p>
-                </section></a>
-
-                <a href="web/sites/about.html"><section id="about-initiative">
-                    <h2>Sobre la Iniciativa</h2>
-                    <p>
-                        <strong>Siberik Connect</strong> es un proyecto <em>sin ánimo de lucro</em> impulsado por la empresa 
-                        <strong>SIBERIK</strong>. Aunque la compañía desarrolla actividades empresariales en el ámbito de la 
-                        inteligencia artificial y la producción audiovisual, este proyecto se mantiene totalmente 
-                        <strong>independiente de cualquier actividad económica</strong>. 
-                        <br><br>
-                        Su propósito es claro: poner la tecnología al servicio de las personas más vulnerables, 
-                        utilizando la inteligencia artificial y la empatía humana como herramientas para prevenir 
-                        el aislamiento, la exclusión social y el suicidio.
-                    </p>
-                </section></a>
-
-                <a href="web/sites/architecture.html"><section id="how-it-works">
-                    <h2>Cómo Funciona</h2>
-                    <p>
-                        El sistema de Siberik Connect combina tres niveles de apoyo:
-                    </p>
-                    <ul>
-                        <li><strong>Comunicación con la IA:</strong> un espacio seguro para hablar, desahogarse y recibir orientación 
-                            emocional inicial mediante una inteligencia artificial empática y entrenada para escuchar sin juzgar.</li>
-                        <li><strong>Comunicación humana:</strong> conexión anónima entre usuarios en crisis y voluntarios, 
-                            fomentando conversaciones individuales o grupales basadas en empatía, respeto y acompañamiento.</li>
-                        <li><strong>Servicios de emergencia:</strong> en casos graves, el sistema puede activar protocolos de emergencia 
-                            y contactar a los servicios locales para proteger la vida del usuario, siempre con su consentimiento.</li>
-                    </ul>
-                </section></a>
-
-                <a href="web/sites/ethics.html"><section id="ethics-transparency">
-                    <h2>Ética y Transparencia</h2>
-                    <p>
-                        Siberik Connect no genera ningún beneficio económico para SIBERIK ni para sus colaboradores. 
-                        Todos los recursos que reciba serán destinados exclusivamente a mantener y mejorar el servicio. 
-                        <br><br>
-                        Cada movimiento económico se registrará públicamente en informes mensuales, disponibles en esta misma página 
-                        una vez la iniciativa sea pública, garantizando total <strong>transparencia y trazabilidad</strong> de los fondos. 
-                        <br><br>
-                        Además, la privacidad y seguridad de los usuarios son una prioridad absoluta: toda comunicación está cifrada, 
-                        los datos personales se tratan de forma anónima y solo se comparten con los servicios de emergencia en caso 
-                        de riesgo vital.
-                    </p>
-                </section></a>
-
-                <a href="web/sites/colab.html"><section id="how-to-help">
-                    <h2>Cómo Colaborar</h2>
-                    <p>
-                        Si compartes nuestra visión y deseas aportar tu granito de arena, puedes hacerlo de varias formas:
-                    </p>
-                    <ul>
-                        <li><strong>Como voluntario:</strong> ofreciendo tu tiempo y empatía para conversar y acompañar a personas que lo necesiten.</li>
-                        <li><strong>Como profesional:</strong> participando en el desarrollo técnico, la gestión ética o la coordinación de recursos.</li>
-                        <li><strong>Como donante:</strong> aportando apoyo económico o material, con total visibilidad sobre cómo se usa cada contribución.</li>
-                    </ul>
-                    <p>
-                        Cada gesto cuenta. A veces, <em>escuchar a tiempo</em> puede marcar la diferencia entre la vida y la muerte.
-                    </p>
-                </section></a>
-
-                <section id="contact">
-                    <h2>Contacto</h2>
-                    <p>
-                        Si deseas colaborar, participar o conocer más detalles sobre Siberik Connect, puedes escribirnos a:<br>
-                        <a href="mailto:team.siberik@gmail.com" class="contact-link">team.siberik@gmail.com</a>
-                    </p>
-                </section>
-            </main>
-        </div>
-        <footer>
-            <img src="web/assets/SIBERIK/SIBERIK.png" alt="Siberik" style="width:40px; opacity:0.7;"/><br/>
-            <br>
-            © 2025 SIBERIK. Todos los derechos reservados.
+        <footer class="sc-footer">
+            <div class="sc-footer-inner">
+                <span class="sc-footer-text">Siberik Connect · Iniciativa sin ánimo de lucro.</span>
+                <span class="sc-footer-copy">© 2025 SIBERIK.</span>
+            </div>
         </footer>
-        <script src="web/JS/index.js"></script>
-        <script src="web/JS/theme.js"></script>
-        <script src="web/JS/elements/hero.js"></script>
-        <script src="web/JS/elements/modal.js"></script>
-        <script src="web/JS/elements/header.js"></script>
-        <script src="web/JS/elements/background.js"></script>
-    </body>
+    </div>
+
+
+
+    <script src="web/JS/index.js"></script>
+    <script src="web/JS/theme.js"></script>
+    <script src="web/JS/elements/header.js"></script>
+    <script src="web/JS/elements/hero.js"></script>
+    <script src="web/JS/elements/modal.js"></script>
+    <script src="web/JS/elements/background.js"></script>
+</body>
+
 
 </html>

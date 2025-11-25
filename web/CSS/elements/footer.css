@@ -1,7 +1,20 @@
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--surface-bg-color);
-    color: var(--text-secondary-color);
-    font-size: 0.9rem;
+.sc-footer {
+    border-top: 1px solid rgba(203, 213, 245, 0.9);
+    background: #f3f4ff;
+}
+
+.sc-footer-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: #6b7280;
+}
+
+.sc-footer-text,
+.sc-footer-copy {
+    white-space: nowrap;
 }

@@ -1,42 +1,91 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.sc-body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    background: #f4f6fb;
+    color: #111827;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
 
 :root {
-    --transicion: 0.6s ease;
-    font-family: "Segoe UI", Roboto, sans-serif;
+    --sc-bg: #f4f6fb;
+    --sc-bg-soft: #e5ebfb;
+    --sc-surface: #ffffff;
+    --sc-surface-soft: #f9fafb;
+
+    --sc-primary: #4f8df6;
+    --sc-primary-soft: #e0ebff;
+    --sc-accent: #a78bfa;
+    --sc-accent-soft: #ebe7ff;
+
+    --sc-text-main: #111827;
+    --sc-text-soft: #4b5563;
+    --sc-text-muted: #6b7280;
+
+    --sc-border-soft: #e5e7eb;
+    --sc-border-strong: #cbd5f5;
+
+    --sc-radius-lg: 24px;
+    --sc-radius-md: 18px;
+    --sc-radius-pill: 999px;
+
+    --sc-shadow-soft: 0 18px 45px rgba(148, 163, 184, 0.12);
+
+    --sc-transition-fast: 0.18s ease-out;
+    --sc-transition-med: 0.3s ease-out;
 }
 
-/* =============================
-   GENERAL RESET & BASE STYLES
-============================= */
-
-body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-primary-color);
-    background-color: var(--main-bg-color);
-    line-height: 1.6;
-    margin: 0;
+.sc-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.hidden {
-    display: none;
+.sc-main {
+    flex: 1;
 }
 
-.fade-out {
+.sc-section {
     opacity: 0;
-    transition: opacity 1s ease;
+    transform: translateY(18px);
+    transition: opacity var(--sc-transition-med), transform var(--sc-transition-med);
+    scroll-margin-top: 110px;
 }
 
-.hidden {
-    display: none;
+.sc-section.sc-section--visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* =============================
-   HERO CANVAS BACKGROUND
-============================= */
-#hero-background {
-    position: fixed; /* important: cover entire viewport, behind everything */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+@media (max-width: 768px) {
+    body.sc-body {
+        background: #eef2ff;
+    }
 }

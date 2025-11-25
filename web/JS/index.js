@@ -1,70 +1,97 @@
+class SectionHighlighter {
+    constructor() {
+        this.sections = Array.from(document.querySelectorAll(".sc-section"));
+        this.navLinks = Array.from(document.querySelectorAll("[data-nav-link]"));
 
-const intro = document.getElementById("hero-section");
-const heroButton = document.querySelector('.hero-btn');
-const main = document.getElementById("main-content");
-const footer = document.querySelector("footer");
-const omitIntro = document.getElementById("omit-intro");
+        if (!this.sections.length) return;
 
-// =============================
-// PAGE GENERAL BEHAVIOR
-// =============================
+        const observer = new IntersectionObserver(
+            entries => this.handleIntersect(entries),
+            { threshold: 0.35 }
+        );
 
-document.addEventListener('DOMContentLoaded', () => {
-    const mainContent = document.getElementById('main-content');
-    mainContent.classList.add('hidden');
+        this.sections.forEach(section => observer.observe(section));
 
-    document.addEventListener('heroFinished', () => {
-        mainContent.classList.remove('hidden');
-        mainContent.style.opacity = 0;
-
-        // Fade-in main content
-        setTimeout(() => {
-            mainContent.style.opacity = 1, 50
+        window.addEventListener("load", () => {
+            const hero = document.querySelector("#hero");
+            if (hero) hero.classList.add("sc-section--visible");
         });
-    });
-});
+    }
 
-// Fade out the intro section
-function fadeOutIntro(callback) {
-    intro.style.opacity = 0;
-    setTimeout(() => {
-        intro.style.display = "none";
-        callback();
-    }, 600);
+    handleIntersect(entries) {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute("id");
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("sc-section--visible");
+                this.markNavActive(id);
+            }
+        });
+    }
+
+    markNavActive(id) {
+        this.navLinks.forEach(link => {
+            const href = link.getAttribute("href") || "";
+            const targetId = href.startsWith("#") ? href.slice(1) : null;
+            const active = targetId === id;
+            link.classList.toggle("sc-nav-link--active", active);
+        });
+    }
 }
 
-// Show the main content section with fade-in effect
-function showMainContent(callback) {
-    main.style.display = "block";
-    setTimeout(() => {
-        main.style.opacity = 1;
-        if (callback) callback();
-            showFooter(); 
-    }, 100);
+class SmoothScrollController {
+    constructor() {
+        document.addEventListener("click", evt => {
+            const trigger = evt.target.closest("[data-scroll-to]");
+            if (!trigger) return;
+
+            const targetSelector = trigger.getAttribute("data-scroll-to");
+            const target = document.querySelector(targetSelector);
+            if (!target) return;
+
+            evt.preventDefault();
+            const offset = 80;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: "smooth" });
+        });
+    }
 }
 
-// Show the footer with a smooth fade-in
-function showFooter() {
-    if (footer) {
-        footer.style.display = "block";
-        footer.style.opacity = 0;
+
+// Nuevo HERO overlay logic
+class HeroOverlayController {
+    constructor() {
+        this.hero = document.getElementById("hero-overlay");
+        this.discoverBtn = document.querySelector("[data-hero-discover]");
+        this.main = document.querySelector("main.sc-main");
+
+        if (!this.hero || !this.discoverBtn || !this.main) return;
+
+        this.discoverBtn.addEventListener("click", () => {
+            this.hideHero();
+        });
+    }
+
+    hideHero() {
+        // Añadir clase para fade out
+        this.hero.classList.add("sc-hero-hidden");
+
+        // Mostrar contenido después del fade
         setTimeout(() => {
-            footer.style.transition = "opacity 0.6s";
-            footer.style.opacity = 1;
-        }, 50);
+            this.main.style.display = "block";
+            this.main.style.opacity = "0";
+
+            // pequeño delay para activar el fade-in con CSS
+            requestAnimationFrame(() => {
+                this.main.style.transition = "opacity 1s ease";
+                this.main.style.opacity = "1";
+            });
+        }, 900); // coincide con el fade del hero
     }
 }
 
-heroButton.addEventListener("click", () => {
-    fadeOutIntro(() => showMainContent());
-});
-
-omitIntro.addEventListener("click", () => {
-    fadeOutIntro(() => showMainContent());
-});
-
-window.addEventListener("load", () => {
-    if (footer) {
-        footer.style.display = "none"; // hide footer initially
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    new SectionHighlighter();
+    new SmoothScrollController();
+    new HeroOverlayController();
 });
