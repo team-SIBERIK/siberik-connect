@@ -146,3 +146,10 @@
         gap: 0.2rem;
     }
 }
+
+@media (max-width: 540px) {
+    .sc-contact-inline {
+        display: grid;
+        grid-template-columns: 1fr !important;
+    }
+}
